@@ -58,7 +58,12 @@ La première partie du notebook comporte 3 analyses :
 
 ## Analyse temporelle
 
+
 Quelle est la répartition des annonces dans le temps ? Des annonces sont publiées sur le site de l'AAF depuis 2006. La première est une annonce publiée par Radio France en juin 2006.
+
+
+![](img/Capture d’écran 2022-05-15 132949.png)
+
 
 
 ```{r echo=FALSE}
@@ -130,7 +135,6 @@ ggplotly(repart)
 
 Le secteur public constitue une catégorie multiple et non homogène (on y retrouve les services centraux, les collectivités, les établissements publics...). Si l'on catégorise chaque structure, on peut observer que le nombre d'emplois proposés par les communes et les départementaux sont assez proches et que la part des entreprises est la plus importante sauf entre 2009 et 2011. 
 
-Le second graphique fait apparaître nettement la part du nombre d'offres proposées par les entreprises et leur progression dans le temps.
 
 ```{r echo=FALSE}
 type <- data %>%
@@ -151,6 +155,8 @@ type <- data %>%
 ggplotly(type)
 ```
 
+
+Le second graphique fait apparaître nettement la part du nombre d'offres proposées par les entreprises et leur progression dans le temps.
 
 
 ```{r echo=FALSE}
@@ -274,7 +280,7 @@ reppays
 
 ### Pourcentage d'annonces par pays (hors France)
 
-Les deux pays, en dehors de la France, où se trouvent les emplois proposés sont : le Luxembourg et la Suisse.
+Il y a 29 annonces hors France, et, les deux pays où se trouvent les plus représentés sont : le Luxembourg (9 annonces) et la Suisse (8 annonces).
 
 ```{r echo=FALSE}
 
@@ -331,7 +337,7 @@ Pour les annonces localisées en France, quels sont les départements où il y a
 
 On peut remarquer que, pour quelques départements, il n'y a jamais eu d'offres diffusées sur le site de l'AAF.
 
-**Avertissement** : dans certains cas, le département n'était pas indiquée mais à pu être déduite (par localisation d'une entreprise ou d'une entité administrative). Cependant, il peut exister des biais ou des erreurs, le poste proposé n'étant pas nécessairement localisé au siège de la société ou de l'administration.
+**Avertissement** : dans certains cas, le département n'était pas indiqué mais à pu être déduit (par localisation d'une entreprise ou d'une entité administrative). Cependant, il peut exister des biais ou des erreurs, le poste proposé n'étant pas nécessairement localisé au siège de la société ou de l'administration.
 
 
 
@@ -412,6 +418,10 @@ wordcloud(words = d$word, freq = d$freq, min.freq = 1,
 ```
 
 ### Répartition temporelle des mots les plus présents dans les annonces
+
+Si l'on se concentre sur l'évolution des 5 mots les plus représentés, on peut remarquer que le terme *archiviste* connaît une croissance quasi ininterrompu depuis 2006. La progression est moins importante mais le terme *chargé* connaît également une hausse constante.
+
+En revanche, un terme comme *conservation* est relativement stable. Il faut noter que ce terme apparaît dans de nombreux intitulé statutaire (assistant de conservation, attaché de conservation) qui peuvent figurer dans les intitulés des offres.
 
 ```{r echo=FALSE}
 intitule <- read_xls(path = "intitule.xls")
@@ -566,7 +576,7 @@ Il couvre une période qui va de juin 2006 (date de la première annonce disponi
 
 * Une partie des offres (les CDD, alternances, stages...) échappent à l'analyse car ces offres sont diffusés via la liste de diffusion de l'AAF.
 
-* Pour permettre des analyses, les données ont été enrichies de certains éléments, néanmoins, ils catégorisent plus les employeurs que les emplois. La qualification fine des types d'emplois (statutaire ou non pour la fonction public, niveau de responsabilité ou catégorie d'emploi dans le statut de la fonction public, type de contrat CDI ou cDD long etc.) aurait supposé de dépouiller chaque offre de façon précise et aurait demandé trop de temps pour un travail personnel.
+* Pour permettre des analyses, les données ont été enrichies de certains éléments, néanmoins, ils catégorisent plus les employeurs que les emplois. La qualification fine des types d'emplois (statutaire ou non pour la fonction public, niveau de responsabilité ou catégorie d'emploi dans le statut de la fonction public, type de contrat CDI ou CDD long etc.) aurait supposé de dépouiller chaque offre de façon précise et aurait demandé trop de temps pour un travail personnel.
 
 #### Perspectives
 
@@ -575,3 +585,7 @@ Cette analyse représente une première étape, elle esquisse quelques pistes de
 * Complétée avec d'autres données : par ex. celle du Collectif A8 (principalement pour l'historique) et du site [Profession archiviste](https://professionarchiviste-emplois-stages.com/)
 
 * Replacée dans une étude plus large sur le rôle de l'AAF dans la professionnalisation, la reconnaissance et la valorisation des archivistes.  
+
+* Ces éléments peuvent venir créer un observatoire de l'emploi qui pourrait être porté par l'AAF.
+
+* Il faudrait compléter le travail par une analyse des CDD et contrat court proposé sur la liste de diffusion de l'AAF pour une vue plus large sur le sujet de l'emploi et de l'insertion professionnelle.
