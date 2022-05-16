@@ -94,11 +94,12 @@ annee <- data %>%
   geom_area( fill="#0D0887FF", alpha=0.2) +
   geom_line(color="#0D0887FF", size=2) +
   geom_point(size=3, color="#0D0887FF") +
-  theme(panel.background = element_rect(fill = "#f7f7f7", colour="#f7f7f7"), 
-        plot.title = element_text(hjust=1)) +
   labs(x="Année", y="Nombre d'annonces",
        title = "Evolution du nombre d'annonces publiées par année") +
-  theme_ipsum_rc()
+  theme_ipsum_rc() +
+  theme(panel.background = element_rect(fill = "#f7f7f7", colour="#f7f7f7"),
+        plot.title = element_text(hjust=1),
+        plot.background = element_rect(fill = "#f9f9f9", colour="#f9f9f9"))
 
 ggplotly(annee)
 ```
@@ -126,7 +127,10 @@ repart <- data %>%
                                 "Public" = "#0D0887FF")) +
   labs(x= "Année", y= "Nombre", fill = "Secteur d'emploi",
        title = "Répartition des annonces par secteur d'emploi \net par année") +
-  theme_ipsum_rc()
+  theme_ipsum_rc() +
+  theme(panel.background = element_rect(fill = "#f7f7f7", colour="#f7f7f7"),
+        plot.title = element_text(hjust=1),
+        plot.background = element_rect(fill = "#f9f9f9", colour="#f9f9f9"))
 
 ggplotly(repart)
 ```
@@ -150,7 +154,10 @@ type <- data %>%
   scale_fill_viridis(discrete = TRUE, option = "C") +
   labs(x= "Année", y= "Nombre", fill = "Secteur d'emploi",
        title = "Répartition des annonces par type de structure \net par année") +
-  theme_ipsum_rc()
+  theme_ipsum_rc() +
+  theme(panel.background = element_rect(fill = "#f7f7f7", colour="#f7f7f7"),
+        plot.title = element_text(hjust=1),
+        plot.background = element_rect(fill = "#f9f9f9", colour="#f9f9f9"))
 
 ggplotly(type)
 ```
@@ -207,7 +214,10 @@ heatmap <- entite %>%
   labs(x = "Année", y = "Type d'employeur",
        title = "Nombre d'annonces par type d'employeur \n et par année") +
   guides(fill = guide_colourbar(title = "Nombre \nd'annonces")) +
-  theme_ipsum_rc()
+  theme_ipsum_rc() +
+  theme(panel.background = element_rect(fill = "#f7f7f7", colour="#f7f7f7"),
+        plot.title = element_text(hjust=1),
+        plot.background = element_rect(fill = "#f9f9f9", colour="#f9f9f9"))
   
 
 ggplotly(heatmap)
@@ -242,10 +252,13 @@ annonceurs %>%
     geom_segment( aes(xend=employeur, yend=0)) +
     geom_point( size=4, color="#0D088F") +
     coord_flip() +
-    theme_ipsum_rc() +
     xlab("")+
     ylab("Nombre d'annonces") +
-    ggtitle("Les 20 plus gros \n annonceurs")
+    ggtitle("Les 20 plus gros \n annonceurs") +
+    theme_ipsum()  +
+    theme(panel.background = element_rect(fill = "#f7f7f7", colour="#f7f7f7"),
+        plot.title = element_text(hjust=1),
+        plot.background = element_rect(fill = "#f9f9f9", colour="#f9f9f9"))
 
 ```
 
@@ -458,8 +471,9 @@ terme <- text2 %>%
     theme(
       legend.position="none",
       plot.title = element_text(size=14),
-      panel.grid = element_blank()
-    ) +
+      panel.grid = element_blank(),
+      panel.background = element_rect(fill = "#f7f7f7", colour="#f7f7f7"),
+      plot.background = element_rect(fill = "#f9f9f9", colour="#f9f9f9")) +
     ggtitle("Répartition temporelle des mots les plus récurrents") +
     ylab("Nombre d'occurrence")+
     xlab("Année") +
