@@ -1,6 +1,6 @@
 ---
 title: "1, 2, 3...emploi !"
-subtitle : "Peut on évaluer le dynamisme de l’emploi des archvistes par les annonces difusées sur le site de l’AAF ?"
+subtitle : "Peut-on évaluer le dynamisme de l’emploi des archivistes par les annonces diffusées sur le site de l’AAF ?"
 author: "Anne-Laure Donzel"
 date: "Mai 2022"
 output :
@@ -433,7 +433,7 @@ wordcloud(words = d$word, freq = d$freq, min.freq = 1,
 
 ### Répartition temporelle des mots les plus présents dans les annonces
 
-Si l'on se concentre sur l'évolution des 5 mots les plus représentés, on peut remarquer que le terme *archiviste* connaît une croissance quasi ininterrompu depuis 2006. La progression est moins importante mais le terme *chargé* connaît également une hausse constante.
+Si l'on se concentre sur l'évolution des 5 mots les plus représentés, on peut remarquer que le terme *archiviste* connaît une croissance quasi ininterrompue depuis 2006. La progression est moins importante mais le terme *chargé* connaît également une hausse constante.
 
 En revanche, un terme comme *conservation* est relativement stable. Il faut noter que ce terme apparaît dans de nombreux intitulé statutaire (assistant de conservation, attaché de conservation) qui peuvent figurer dans les intitulés des offres.
 
@@ -485,7 +485,7 @@ ggplotly(terme)
 
 ### Conclusion
 
-La question initiale était *Peut on évaluer le dynamisme de l’emploi des archvistes par les annonces difusées sur le site de l’AAF ?*, peut-on y apporter une réponse définitive avec ces données ?
+La question initiale était *Peut-on évaluer le dynamisme de l’emploi des archivistes par les annonces diffusées sur le site de l’AAF ?*, peut-on y apporter une réponse définitive avec ces données ?
 
 Les éléments tirés des annonces de l'AAF permettent de voir une croissance du nombre d'offres diffusées régulière et importante depuis 2015 (sauf en 2020, mais c'est lié au contexte sanitaire). On observe également une grande variété des acteurs mais un marché de l'emploi qui reste essentiellement localisée en France.
 
@@ -604,3 +604,4 @@ Cette analyse représente une première étape, elle esquisse quelques pistes de
 * Ces éléments peuvent venir créer un observatoire de l'emploi qui pourrait être porté par l'AAF.
 
 * Il faudrait compléter le travail par une analyse des CDD et contrat court proposé sur la liste de diffusion de l'AAF pour une vue plus large sur le sujet de l'emploi et de l'insertion professionnelle.
+
