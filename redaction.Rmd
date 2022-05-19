@@ -3,8 +3,9 @@ title: "1, 2, 3...emploi !"
 subtitle : "Peut on évaluer le dynamisme de l’emploi des archvistes par les annonces difusées sur le site de l’AAF ?"
 author: "Anne-Laure Donzel"
 date: "Mai 2022"
-output:
+output :
   rmdformats::downcute
+  
 ---
 
 ```{r setup, echo=FALSE, warning=FALSE, include=FALSE}
